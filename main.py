@@ -6,7 +6,7 @@ app = FastAPI()
 
 # Словарь с предопределёнными ответами
 response_data = {
-    "run_bot": "Tf7bCNDTlZlHD9M6J2s4JWmIQjtsh4Pdl8GgliwdvNc=",
+    "run_bot": "39bapUsU_sWpUEe55FJB1-0fYNBIalUagMP8a1g0-RQ=",
 }
 
 @app.post("/receive")
