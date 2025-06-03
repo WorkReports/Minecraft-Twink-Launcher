@@ -39,10 +39,6 @@ async function sendImage(imagePath) {
   }
 }
 
-const filename = `captchas/3.png`;
-console.log(`Проверка файла перед отправкой: ${fs.existsSync(filename) ? 'Существует' : 'НЕ существует'}`);
-sendImage(filename);
-
 let bot = null;
 let resourcesAccepted = false;
 
