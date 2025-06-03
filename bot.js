@@ -85,7 +85,7 @@ app.post('/command', async (req, res) => {
     });
 
     bot.on('message', (message) => {
-      //console.log(`Сообщение от сервера: ${message.toAnsi()}`);
+      console.log(`Сообщение от сервера: ${message.toAnsi()}`);
 
       if (message.toString().includes('[ТекстурПак] Примите установку Aресурсов для комфортной игры!')) {
         console.log('Обнаружено сообщение о текстурпаке, принимаем ресурсы...');
