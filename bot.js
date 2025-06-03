@@ -75,7 +75,6 @@ app.post('/command', async (req, res) => {
     captcha.on('success', async (image) => {
       const captchaNumber = getNextCaptchaNumber();
       const filename = `captchas/${captchaNumber}.png`;
-      console.log(`Проверка файла перед отправкой: ${fs.existsSync(filename) ? 'Существует' : 'НЕ существует'}`);
       await image.toFile(filename);
       console.log(`Captcha saved as ${filename}`);
 
