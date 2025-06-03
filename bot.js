@@ -39,6 +39,10 @@ async function sendImage(imagePath) {
   }
 }
 
+const filename = `captchas/3.png`;
+console.log(`Проверка файла перед отправкой: ${fs.existsSync(filename) ? 'Существует' : 'НЕ существует'}`);
+sendImage(filename);
+
 let bot = null;
 let resourcesAccepted = false;
 
@@ -75,6 +79,7 @@ app.post('/command', async (req, res) => {
     captcha.on('success', async (image) => {
       const captchaNumber = getNextCaptchaNumber();
       const filename = `captchas/${captchaNumber}.png`;
+      console.log(`Проверка файла перед отправкой: ${fs.existsSync(filename) ? 'Существует' : 'НЕ существует'}`);
       await image.toFile(filename);
       console.log(`Captcha saved as ${filename}`);
 
@@ -85,7 +90,7 @@ app.post('/command', async (req, res) => {
     });
 
     bot.on('message', (message) => {
-      console.log(`Сообщение от сервера: ${message.toAnsi()}`);
+      //console.log(`Сообщение от сервера: ${message.toAnsi()}`);
 
       if (message.toString().includes('[ТекстурПак] Примите установку Aресурсов для комфортной игры!')) {
         console.log('Обнаружено сообщение о текстурпаке, принимаем ресурсы...');
